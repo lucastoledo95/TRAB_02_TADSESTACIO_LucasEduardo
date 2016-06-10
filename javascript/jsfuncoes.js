@@ -212,7 +212,7 @@ function validarLetras(){
 
 
 function validarCPF(){
-	//evento change do campo cpf
+	//Evento blur do campo cpf
 		$("#cpf").blur(function(){
 		var cpf = $("#cpf").val();
 		if( cpf <= 0 ) return;
@@ -232,7 +232,7 @@ function validarCPF(){
 			$("#cpf").val("");
 			return false;
 		}
-		//verifica o primeiro digito
+		//verifica o primeiro digito validando
 		soma = 0;
 		for(i = 0; i < 9; i++)
 			soma += parseInt(cpf.charAt(i)) * (10 - i);
@@ -245,7 +245,7 @@ function validarCPF(){
 			$("#cpf").val("");
 			return false;
 		}
-		//verifica com o primeiro digito e o segundo
+		//verifica com o primeiro digito e o segundo validando novamente
 		soma = 0;
 		for(i = 0; i < 10; i ++)
 			soma += parseInt(cpf.charAt(i)) * (11 - i);
@@ -300,7 +300,7 @@ function validarCaracteres(){
 	});
 }
 function mensagemCB(){
-	//evento verifica ao clicar no checkbox
+	//evento verifica ao clicar no checkbox para trocar mensagem como ativa
 	$("#promocao").on("change",function () {  
 		verificaCheck();
 	});
